@@ -1,9 +1,11 @@
-const Todo = require("../models/todo_model");
+class TodoService {
+  constructor(repository) {
+    this.todoRepository = repository;
+  }
 
-class TodoRepository {
   async getTodos() {
     try {
-      const res = await Todo.findAll();
+      const res = await this.todoRepository.getTodos();
       return res;
     } catch (e) {
       console.log(e);
@@ -12,10 +14,7 @@ class TodoRepository {
 
   async addTodo(text) {
     try {
-      const res = await Todo.create({
-        text: text,
-        competed: false,
-      });
+      const res = await this.todoRepository.addTodo(text);
       return res;
     } catch (e) {
       console.log(e);
@@ -24,7 +23,7 @@ class TodoRepository {
 
   async updateTodo(id, updateObj) {
     try {
-      const res = await Todo.update({ updateObj }, { where: { id } });
+      const res = await this.todoRepository.updateTodo(id, updateObj);
       return res;
     } catch (e) {
       console.log(e);
@@ -33,7 +32,7 @@ class TodoRepository {
 
   async deleteTodo(id) {
     try {
-      const res = await Todo.destroy({ id });
+      const res = await this.todoRepository.deleteTodo(id);
       return res;
     } catch (e) {
       console.log(e);
@@ -41,4 +40,4 @@ class TodoRepository {
   }
 }
 
-module.exports = TodoRepository;
+module.exports = TodoService;

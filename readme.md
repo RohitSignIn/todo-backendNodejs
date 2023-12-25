@@ -1,3 +1,3 @@
-# Todo Bacend
+# Todo Backend
 
--- Simple and wll structured todo backend
+-- Simple and well structured todo backend

@@ -1,19 +1,22 @@
 const router = require("express").Router();
 
-function a() {
-  return 1;
-}
+const {
+  getTodos,
+  addTodo,
+  updateTodo,
+  deleteTodo,
+} = require("../../controllers/todo_controller");
 
 // GET ALL TODOS
-router.get("/", a);
+router.get("/", getTodos);
 
 // CREATE TODO
-router.post("/", a);
-
-// DELETE TODO
-router.delete("/", a);
+router.post("/", addTodo);
 
 // UPDATE TODOS
-router.patch("/", a);
+router.patch("/:id", updateTodo);
+
+// DELETE TODO
+router.delete("/:id", deleteTodo);
 
 module.exports = router;
