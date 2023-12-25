@@ -1,9 +1,10 @@
 const express = require("express");
-const { PORT } = require("./config/server_config");
-
 const app = express();
 
-app.use("/api");
+const { PORT } = require("./config/server_config");
+const apiRouter = require("./routes/api_router");
+
+app.use("/api", apiRouter);
 
 app.listen(PORT, (res) => {
   console.log(`Server Started on http://localhost:${PORT}`);
