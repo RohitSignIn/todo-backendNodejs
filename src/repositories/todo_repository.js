@@ -24,7 +24,7 @@ class TodoRepository {
 
   async updateTodo(id, updateObj) {
     try {
-      const res = await Todo.update({ updateObj }, { where: { id } });
+      const res = await Todo.update(updateObj, { where: { id } });
       return res;
     } catch (e) {
       console.log(e);
@@ -33,7 +33,7 @@ class TodoRepository {
 
   async deleteTodo(id) {
     try {
-      const res = await Todo.destroy({ id });
+      const res = await Todo.destroy({ where: { id } });
       return res;
     } catch (e) {
       console.log(e);

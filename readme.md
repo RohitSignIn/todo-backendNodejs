@@ -15,10 +15,6 @@
       }
     ```
 
-  ```
-
-  ```
-
 - Update a todo
 
   - PATCH http://localhost:3001/api/v1/todo
@@ -40,9 +36,4 @@
 
 * Delete a todo
 
-  - PATCH http://localhost:3001/api/v1/t
-  - ```
-      {
-          id: 1
-      }
-    ```
+  - DELETE http://localhost:3001/api/v1/1

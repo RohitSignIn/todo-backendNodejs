@@ -14,7 +14,7 @@ router.get("/", getTodos);
 router.post("/", addTodo);
 
 // UPDATE TODOS
-router.patch("/:id", updateTodo);
+router.patch("/", updateTodo);
 
 // DELETE TODO
 router.delete("/:id", deleteTodo);

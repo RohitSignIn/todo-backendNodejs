@@ -30,7 +30,10 @@ async function addTodo(req, res) {
 
 async function updateTodo(req, res) {
   try {
-    const response = await todoService.updateTodo(req.params.id, {
+    console.log(req.body.id, {
+      [req.body.update]: req.body[req.body.update],
+    });
+    const response = await todoService.updateTodo(req.body.id, {
       [req.body.update]: req.body[req.body.update],
     });
     return res.json({
