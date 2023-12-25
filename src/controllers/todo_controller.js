@@ -17,6 +17,7 @@ async function getTodos(req, res) {
 
 async function addTodo(req, res) {
   try {
+    console.log(req.body);
     const response = await todoService.addTodo(req.body.text);
     return res.json({
       success: true,

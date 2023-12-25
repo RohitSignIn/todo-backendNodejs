@@ -14,7 +14,7 @@ class TodoRepository {
     try {
       const res = await Todo.create({
         text: text,
-        competed: false,
+        completed: false,
       });
       return res;
     } catch (e) {
