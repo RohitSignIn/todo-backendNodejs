@@ -11,7 +11,7 @@ router.get("/", a);
 router.post("/", a);
 
 // DELETE TODO
-router.get("/", a);
+router.delete("/", a);
 
 // UPDATE TODOS
 router.patch("/", a);
